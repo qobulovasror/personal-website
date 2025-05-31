@@ -2,9 +2,9 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="space-y-20">
+    <div className="space-y-20 mt-0">
       {/* Hero Section */}
-      <section className="text-center py-20">
+      <section className="text-center py-5 lg:py-10">
         <div className="inline-block p-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl mb-8">
           <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center">
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
