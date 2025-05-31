@@ -8,8 +8,8 @@ export default function NavLink({ children, link, onClick }: { children: React.R
       to={link}
       onClick={onClick}
       className={`px-4 py-2 rounded-lg transition-all duration-300 font-medium ${location.pathname === link
-        ? 'bg-black text-white shadow-lg'
-        : 'text-gray-600 hover:text-black hover:bg-gray-100'
+        ? 'bg-black text-white shadow-lg dark:bg-gray-200 dark:text-black'
+        : 'text-gray-600 hover:text-black hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white'
         }`}
     >
       {children}

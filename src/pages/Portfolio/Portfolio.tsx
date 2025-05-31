@@ -5,8 +5,8 @@ export default function Portfolio() {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Portfolio</h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Portfolio</h1>
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           A collection of projects that showcase my passion for creating exceptional digital experiences.
         </p>
       </div>
@@ -15,7 +15,7 @@ export default function Portfolio() {
         {projects.map(project => (
           <div key={project.id} className="group">
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="relative overflow-hidden rounded-2xl bg-gray-100">
+              <div className="relative overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -23,11 +23,11 @@ export default function Portfolio() {
                 />
               </div>
               <div className="space-y-6">
-                <h2 className="text-3xl font-bold text-gray-900">{project.title}</h2>
-                <p className="text-gray-600 text-lg leading-relaxed">{project.description}</p>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{project.title}</h2>
+                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-3">
                   {project.tech.map(tech => (
-                    <span key={tech} className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium">
+                    <span key={tech} className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white rounded-lg font-medium">
                       {tech}
                     </span>
                   ))}
@@ -35,14 +35,14 @@ export default function Portfolio() {
                 <div className="flex gap-4">
                   <a
                     href={project.link}
-                    className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                    className="flex items-center gap-2 px-6 py-3 bg-black dark:bg-gray-200 dark:text-black text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Live Demo
                   </a>
                   <a
                     href={project.github}
-                    className="flex items-center gap-2 px-6 py-3 border-2 border-gray-200 text-gray-700 rounded-lg font-medium hover:border-gray-300 hover:bg-gray-50 transition-colors"
+                    className="flex items-center gap-2 px-6 py-3 border-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-white rounded-lg font-medium hover:border-gray-300 hover:bg-gray-50 transition-colors"
                   >
                     <Github className="w-4 h-4" />
                     Code

@@ -3,6 +3,7 @@ import NavLink from './NavLink';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { OtherLinks } from './Footer';
+import { ModeToggle } from '@/components/mode-toggle';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,36 +11,41 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'Blog', path: '/blog' },
     { name: 'Projects', path: '/portfolio' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
   ];
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <nav className="sticky top-0 z-50 dark:bg-gray-900 bg-white/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold">A</span>
             </div>
-            <Link to="/" className="text-xl font-bold text-gray-900">Asror</Link>
+            <Link to="/" className="text-xl font-bold dark:text-white text-gray-900">Asror</Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2">
-            {
-              menus.map((menu) => (
-                <NavLink key={menu.name} link={menu.path} onClick={() => setMobileMenuOpen(false)}>
-                  {menu.name}
-                </NavLink>
-              ))
-            }
+          <div className='flex items-center gap-2'>
+            <div className="hidden md:flex items-center gap-2">
+              {
+                menus.map((menu) => (
+                  <NavLink key={menu.name} link={menu.path} onClick={() => setMobileMenuOpen(false)}>
+                    {menu.name}
+                  </NavLink>
+                ))
+              }
+            </div>
+            <ModeToggle />
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-gray-600 hover:text-black"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-gray-600 hover:text-black"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
 
         {/* Mobile Navigation */}

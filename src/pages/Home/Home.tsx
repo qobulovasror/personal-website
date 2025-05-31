@@ -1,4 +1,5 @@
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -12,28 +13,28 @@ export default function Home() {
             </span>
           </div>
         </div>
-        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
           Creative Developer
           <br />
           <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
             & Designer
           </span>
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
           I craft digital experiences that blend beautiful design with cutting-edge technology.
           Passionate about creating solutions that make a difference.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             // onClick={() => setActiveTab('portfolio')}
-            className="px-8 py-4 bg-black text-white rounded-xl font-medium hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 group"
+            className="px-8 py-4 bg-black text-white dark:bg-gray-200 dark:text-black rounded-xl font-medium hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 group"
           >
             View My Work
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
           <button
             // onClick={() => setActiveTab('blog')}
-            className="px-8 py-4 border-2 border-gray-200 text-gray-700 rounded-xl font-medium hover:border-gray-300 hover:bg-gray-50 transition-all duration-300"
+            className="px-8 py-4 border-2 border-gray-200 text-gray-700 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white rounded-xl font-medium hover:border-gray-300 hover:bg-gray-50 transition-all duration-300"
           >
             Read Blog
           </button>
@@ -43,32 +44,32 @@ export default function Home() {
       {/* Featured Work */}
       <section>
         <div className="flex items-center justify-between mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">Featured Work</h2>
-          <button
-            // onClick={() => setActiveTab('portfolio')}
-            className="text-gray-600 hover:text-black transition-colors flex items-center gap-2"
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Featured Work</h2>
+          <Link
+            to="/portfolio"
+            className="text-gray-600 dark:text-gray-400 hover:text-black transition-colors flex items-center gap-2"
           >
             View All <ArrowRight className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.slice(0, 2).map(project => (
             <div key={project.id} className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-2xl mb-6 bg-gray-100">
+              <div className="relative overflow-hidden rounded-2xl mb-6 bg-gray-100 dark:bg-gray-800">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-black/0 dark:bg-white/0 group-hover:bg-black/10 transition-colors duration-300" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors">
                 {project.title}
               </h3>
-              <p className="text-gray-600 mb-4">{project.description}</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map(tech => (
-                  <span key={tech} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+                  <span key={tech} className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-white rounded-full text-sm">
                     {tech}
                   </span>
                 ))}
@@ -81,21 +82,22 @@ export default function Home() {
       {/* Latest Blog Posts */}
       <section>
         <div className="flex items-center justify-between mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">Latest Posts</h2>
-          <button
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Latest Posts</h2>
+          <Link
+            to="/blog"
             // onClick={() => setActiveTab('blog')}
-            className="text-gray-600 hover:text-black transition-colors flex items-center gap-2"
+            className="text-gray-600 dark:text-gray-400 hover:text-black transition-colors flex items-center gap-2"
           >
             View All <ArrowRight className="w-4 h-4" />
-          </button>
+          </Link>
         </div>
         <div className="space-y-8">
           {blogPosts.slice(0, 2).map(post => (
             <article key={post.id} className="group cursor-pointer">
               <div className="flex items-start gap-6">
                 <div className="flex-1">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
-                    <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full">
+                  <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                    <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-white rounded-full">
                       {post.category}
                     </span>
                     <div className="flex items-center gap-1">
@@ -107,10 +109,10 @@ export default function Home() {
                       {post.readTime}
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors">
                     {post.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">{post.excerpt}</p>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{post.excerpt}</p>
                 </div>
               </div>
             </article>

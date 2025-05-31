@@ -8,6 +8,7 @@ import '@/App.css'
 const HomePage = lazy(() => import("@/pages/Home/Home"))
 const Blog = lazy(() => import("@/pages/Blog/Blog"))
 const Portfolio = lazy(() => import("@/pages/Portfolio/Portfolio"))
+const BlogPost = lazy(() => import("@/pages/Blog/BlogPost"))
 
 function App() {
   return (
@@ -18,7 +19,9 @@ function App() {
             <Route element={<Layout />}>
               <Route path="/" element={<HomePage />} />
               <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog" element={<Blog />}>
+                <Route path=":id" element={<BlogPost />} />
+              </Route>
             </Route>
           </Routes>
         </BrowserRouter>

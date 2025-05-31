@@ -1,4 +1,5 @@
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const blogPosts = [
   {
@@ -31,8 +32,8 @@ export default function Blog() {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Blog</h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Blog</h1>
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Thoughts on technology, design, and building better digital experiences.
         </p>
       </div>
@@ -40,9 +41,9 @@ export default function Blog() {
       <div className="space-y-12">
         {blogPosts.map(post => (
           <article key={post.id} className="group cursor-pointer">
-            <div className="p-8 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300">
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full">
+            <div className="p-8 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-gray-200 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-white rounded-full">
                   {post.category}
                 </span>
                 <div className="flex items-center gap-1">
@@ -54,14 +55,14 @@ export default function Blog() {
                   {post.readTime}
                 </div>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 transition-colors">
                 {post.title}
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">{post.excerpt}</p>
-              <div className="flex items-center text-blue-600 font-medium group-hover:gap-3 transition-all">
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">{post.excerpt}</p>
+              <Link to={`/blog/${post.id}`} className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:gap-3 transition-all">
                 Read More
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </div>
+              </Link>
             </div>
           </article>
         ))}
