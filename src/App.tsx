@@ -8,7 +8,10 @@ import '@/App.css'
 const HomePage = lazy(() => import("@/pages/Home/Home"))
 const Blog = lazy(() => import("@/pages/Blog/Blog"))
 const Portfolio = lazy(() => import("@/pages/Portfolio/Portfolio"))
+const AboutPage = lazy(() => import("@/pages/About/About"))
+const ContactPage = lazy(() => import("@/pages/Contact/Contact"))
 const BlogPost = lazy(() => import("@/pages/Blog/BlogPost"))
+const NotFound = lazy(() => import("@/pages/NotFound/NotFound"))
 
 function App() {
   return (
@@ -19,9 +22,12 @@ function App() {
             <Route element={<Layout />}>
               <Route path="/" element={<HomePage />} />
               <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
               <Route path="/blog" element={<Blog />}>
                 <Route path=":id" element={<BlogPost />} />
               </Route>
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
         </BrowserRouter>

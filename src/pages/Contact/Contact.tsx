@@ -1,0 +1,196 @@
+import { Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react';
+import React, { useState } from 'react'
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(formData);
+  };
+
+  return (
+    <div className="space-y-16">
+      {/* Header */}
+      <section className="text-center">
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 dark:text-white">Get In Touch</h1>
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto dark:text-gray-400">
+          Have a project in mind or just want to chat? I'd love to hear from you.
+          Let's discuss how we can bring your ideas to life.
+        </p>
+      </section>
+
+      <div className="grid md:grid-cols-2 gap-16">
+        {/* Contact Info */}
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-8 dark:text-white">Let's Connect</h2>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1 dark:text-white">Email</h3>
+                  <p className="text-gray-600 dark:text-gray-400">qobulovasror0@gmail.com</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-5 h-5 text-green-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1 dark:text-white">Phone</h3>
+                  <p className="text-gray-600 dark:text-gray-400">+998 93 358 28 27</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-purple-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 mb-1 dark:text-white">Location</h3>
+                  <p className="text-gray-600 dark:text-gray-400">Samarqand, Uzbekistan</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-4 dark:text-white">Follow Me</h3>
+            <div className="flex gap-4">
+              <a
+                href="https://github.com/qobulovasror"
+                target="_blank"
+                className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-gray-200 transition-colors"
+              >
+                <Github className="w-5 h-5 text-gray-700" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/asrorqobulov/"
+                target="_blank"
+                className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-gray-200 transition-colors"
+              >
+                <Linkedin className="w-5 h-5 text-gray-700" />
+              </a>
+              <a
+                href="mailto:qobulovasror0@gmail.com"
+                target="_blank"
+                className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-gray-200 transition-colors"
+              >
+                <Mail className="w-5 h-5 text-gray-700" />
+              </a>
+            </div>
+          </div>
+
+          {/* Availability */}
+          <div className="p-6 bg-green-50 rounded-2xl dark:bg-green-900">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="font-semibold text-gray-900 dark:text-white">Available for Work</span>
+            </div>
+            <p className="text-gray-600 dark:text-gray-400">
+              I'm currently available for freelance projects and full-time opportunities.
+              Let's discuss your next project!
+            </p>
+          </div>
+        </div>
+
+        {/* Contact Form */}
+        <div>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleFormChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Subject
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleFormChange}
+                required
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                placeholder="What's this about?"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleFormChange}
+                required
+                rows={6}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"
+                placeholder="Tell me about your project..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full px-8 py-4 bg-black text-white rounded-xl font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 group dark:bg-white dark:text-black dark:hover:bg-gray-200 dark:hover:text-black"
+            >
+              Send Message
+              <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+
+}

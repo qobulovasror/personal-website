@@ -9,6 +9,10 @@
   position: relative;
   animation: l23-0 1.5s linear infinite;
 }
+
+.dark .loader-component .loader {
+  --_g: no-repeat radial-gradient(farthest-side,#fff 94%,#0000);
+}
 .loader-component .loader:before {
   content: "";
   position: absolute;
@@ -22,6 +26,11 @@
     l23-1 1.5s linear infinite,
     l23-2 0.5s cubic-bezier(0,200,.8,200) infinite;
 }
+
+.dark .loader-component .loader:before {
+  background: #fff;
+}
+
 @keyframes l23-0 {
   0%,31%  {background-position: 50% 0   ,100% 0}
   33%     {background-position: 50% 100%,100% 0}
