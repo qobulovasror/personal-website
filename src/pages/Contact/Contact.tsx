@@ -1,5 +1,6 @@
-import { Github, Linkedin, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Github, Linkedin, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 import React, { useState } from 'react'
+import { toast } from "sonner"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ export default function Contact() {
     subject: '',
     message: '',
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -16,9 +18,48 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
+    if (formData.name === '' || formData.email === '' || formData.subject === '' || formData.message === '') {
+      toast.error('Please fill all the fields');
+      return;
+    }
+    const data = {
+      name: formData.name,
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
+    
+    setIsLoading(true);
+    try {
+      const formParams = new URLSearchParams();
+      (Object.keys(data) as Array<keyof typeof data>).forEach(key => {
+        formParams.append(key, data[key]);
+      });
+
+      await fetch(import.meta.env.GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formParams.toString(),
+      });
+
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
+      toast.success('Message sent successfully!');
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast.error('Failed to send message. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -184,7 +225,7 @@ export default function Contact() {
               type="submit"
               className="w-full px-8 py-4 bg-black text-white rounded-xl font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 group dark:bg-white dark:text-black dark:hover:bg-gray-200 dark:hover:text-black"
             >
-              Send Message
+              {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : 'Send Message'}
               <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </form>

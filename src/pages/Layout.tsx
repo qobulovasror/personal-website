@@ -4,6 +4,7 @@ import { Footer } from "@/pages/Common/Footer"
 import CircleLoader from "@/components/Loading/CircleLoader"
 import { ArrowUpIcon } from "lucide-react"
 import { useEffect, useState } from "react"
+import { Toaster } from "sonner"
 
 export default function Layout() {
   const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -41,6 +42,8 @@ export default function Layout() {
           <ArrowUpIcon className="h-6 w-6" />
         </CircleLoader>
       </button>
+
+      <Toaster />
     </>
   )
 }
