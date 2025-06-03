@@ -37,14 +37,21 @@ export default function Contact() {
       (Object.keys(data) as Array<keyof typeof data>).forEach(key => {
         formParams.append(key, data[key]);
       });
-
-      await fetch(import.meta.env.GOOGLE_SHEETS_URL, {
+      const url = import.meta.env.VITE_GOOGLE_SHEETS_URL;
+      if (!url) {
+        toast.error('Google Sheets URL is not set');
+        return;
+      }
+      await fetch(url, {
         method: 'POST',
         mode: 'no-cors',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: formParams.toString(),
+      }).catch(err => {
+        console.log(err);
+        throw err;
       });
 
       setFormData({
