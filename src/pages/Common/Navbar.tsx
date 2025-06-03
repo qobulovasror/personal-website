@@ -22,7 +22,7 @@ export default function Navbar() {
             <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold">A</span>
             </div>
-            <Link to="/" className="text-xl font-bold dark:text-white text-gray-900">Asror</Link>
+            <Link to="/" className="text-xl font-bold dark:text-white text-gray-900">Asror Qobulov</Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -50,8 +50,8 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-6 border-t border-gray-100 absolute top-20 left-0 right-0 bg-white shadow-lg p-5">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden py-6 border-t border-gray-100 absolute top-20 left-0 right-0 bg-white shadow-lg p-5 dark:bg-gray-900">
+            <div className="flex flex-col gap-4 dark:text-white">
               {
                 menus.map((menu) => (
                   <NavLink key={menu.name} link={menu.path} onClick={() => setMobileMenuOpen(false)}>
@@ -60,7 +60,7 @@ export default function Navbar() {
                 ))
               }
               <hr className="w-full border-gray-200 my-4" />
-              <div className='justify-center items-center flex flex-col gap-4 '>
+              <div className='justify-center items-center flex flex-col gap-4 dark:text-white'>
                 <span className="text-gray-600 text-sm">Connect with me:</span>
                 <OtherLinks />
               </div>

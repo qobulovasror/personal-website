@@ -25,19 +25,19 @@ export default function Home() {
           Passionate about creating solutions that make a difference.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
-            // onClick={() => setActiveTab('portfolio')}
+          <Link
+            to="/blog"
             className="px-8 py-4 bg-black text-white dark:bg-gray-200 dark:text-black rounded-xl font-medium hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 group"
           >
             View My Work
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button
-            // onClick={() => setActiveTab('blog')}
+          </Link>
+          <Link
+            to="/blog"
             className="px-8 py-4 border-2 border-gray-200 text-gray-700 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white rounded-xl font-medium hover:border-gray-300 hover:bg-gray-50 transition-all duration-300"
           >
             Read Blog
-          </button>
+          </Link>
         </div>
       </section>
 
