@@ -1,0 +1,82 @@
+{
+  "navbar": {
+    "home": "Bosh sahifa",
+    "blog": "Blog",
+    "projects": "Loyihalar",
+    "about": "Men haqimda",
+    "contact": "Bog'lanish"
+  },
+  "home": {
+    "title": "Dasturchi",
+    "title2": "& Injinir",
+    "description": "Men ilg‘or texnologiyalar yordamida real muammolarni hal qilishga qaratilgan yechimlar yarataman. Men uchun dasturlash – bu shunchaki kod yozish emas, balki insonlarga foydali bo‘lgan vositalarni yaratish san’atidir.",
+    "button": "Loyihalarni ko'rish",
+    "button2": "Blogni o'qish",
+    "featured_work": "Mashhur loyihalar",
+    "latest_posts": "So'ngi postlar",
+    "view_all": "Barchasini ko'rish"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Texnologiyalar, dizayn va yaxshiroq yechimlar haqida fikrlar",
+    "button": "Ko'proq o'qish"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "Men uchun dasturlash – bu shunchaki kod yozish emas, balki insonlarga foydali bo‘lgan vositalarni yaratish san’atidir.",
+    "button": "Barchasini ko'rish",
+    "live_demo": "Ko'rish",
+    "code": "Kod"
+  },
+  "about": {
+    "title": "Men haqimda",
+    "description": "Men ilg‘or texnologiyalar va barqaror yechimlar asosida raqamli mahsulotlar ishlab chiqishga ishtiyoqmand dasturchiman. Men uchun har bir loyiha — bu yangi imkoniyat va yangi yondashuv. Maqsadim — kodni faqat ishlashi uchun emas, balki samarali ishlashi, oson kengaytirilishi va foydalanuvchiga qulay bo‘lishi uchun yozish.",
+    "projects_completed": "Loyihalar",
+    "happy_clients": "Mijozlar",
+    "cups_of_coffee": "Coffee",
+    "years_experience": "Tajriba",
+    "my_journey": "My Journey",
+    "journey_title1": "Started My Developer Journey",
+    "journey_description1": "Begun learning web development with HTML, CSS, and JavaScript. Built my first websites and discovered my passion for creating digital experiences.",
+    "journey_title2": "Specialized in React & Node.js",
+    "journey_description2": "Dove deep into modern web technologies, mastering React, Node.js, and various databases. Started working on more complex full-stack applications.",
+    "journey_title3": "Freelance & Client Work",
+    "journey_description3": "Started working on more complex full-stack applications.",
+    "journey_title4": "Building & Sharing",
+    "journey_description4": "Building & Sharing",
+    "skills": "Texnologiyalar",
+    "work_together": "Ishlash",
+    "work_together_description": "Men har doim yangi imkoniyatlar va qiziqarli loyihalarni o'rganishga tayyorman. Yaxshi loyihalar yaratish uchun birgalikda ishlashim mumkin!",
+    "contact_me": "Bog'lanish",
+    "download": "CV ni yuklash"
+  },
+  "contact": {
+    "title": "Bog'lanish",
+    "description": "Loyiha haqida yoki oddiy chatga qo'shilishni istaysizmi? Men siz bilan bog'lanishni istaysiz. Biz qanday qilib sizning idellaringizni amalga oshirishimiz mumkinligini o'rganamiz.",
+    "title2": "Bog'lanish",
+    "phone": "Telefon",
+    "location": "Manzil",
+    "follow_me": "Kuzating",
+    "for_work": "Ishga tayyor",
+    "for_work_description": "Men hozirda freelancer loyihalar va to'liq vaqtli imkoniyatlarga tayyor. Biz sizning keyingi loyihingizni o'rganamiz!",
+    "full_name": "F.I.SH.",
+    "placeholder_full_name": "Ismingiz",
+    "email": "Email",
+    "placeholder_email": "Emailingiz",
+    "subject": "Mavzu",
+    "placeholder_subject": "Mavzuningiz",
+    "message": "Xabar",
+    "placeholder_message": "Xabaringizni yozing...",
+    "button": "Xabar yuborish"
+  },
+  "site_messages": {
+    "empty_fields": "Iltimos, barcha maydonlarni to'ldiring",
+    "google_sheets_url_not_set": "Google Sheets URL noto'g'ri",
+    "success_title": "Xabar yuborildi!",
+    "error_msg": "Xatolik yuz berdi. Iltimos, qayta urinib ko'ring."
+  },
+  "footer": {
+    "copyright": "Asror",
+    "all_rights_reserved": "Barcha huquqlar himoyalangan."
+  }
+}

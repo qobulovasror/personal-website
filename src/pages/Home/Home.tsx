@@ -1,7 +1,9 @@
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <div className="space-y-20 mt-0">
       {/* Hero Section */}
@@ -14,29 +16,28 @@ export default function Home() {
           </div>
         </div>
         <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
-          Creative Developer
+          {t('home.title')}
           <br />
           <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-            & Designer
+            {t('home.title2')}
           </span>
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-          I craft digital experiences that blend beautiful design with cutting-edge technology.
-          Passionate about creating solutions that make a difference.
+          {t('home.description')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             to="/blog"
             className="px-8 py-4 bg-black text-white dark:bg-gray-200 dark:text-black rounded-xl font-medium hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 group"
           >
-            View My Work
+            {t('home.button')}
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             to="/blog"
             className="px-8 py-4 border-2 border-gray-200 text-gray-700 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white rounded-xl font-medium hover:border-gray-300 hover:bg-gray-50 transition-all duration-300"
           >
-            Read Blog
+            {t('home.button2')}
           </Link>
         </div>
       </section>
@@ -44,12 +45,12 @@ export default function Home() {
       {/* Featured Work */}
       <section>
         <div className="flex items-center justify-between mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Featured Work</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{t('home.featured_work')}</h2>
           <Link
             to="/portfolio"
             className="text-gray-600 dark:text-gray-400 hover:text-black transition-colors flex items-center gap-2"
           >
-            View All <ArrowRight className="w-4 h-4" />
+            {t('home.view_all')} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
@@ -82,13 +83,13 @@ export default function Home() {
       {/* Latest Blog Posts */}
       <section>
         <div className="flex items-center justify-between mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Latest Posts</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{t('home.latest_posts')}</h2>
           <Link
             to="/blog"
             // onClick={() => setActiveTab('blog')}
             className="text-gray-600 dark:text-gray-400 hover:text-black transition-colors flex items-center gap-2"
           >
-            View All <ArrowRight className="w-4 h-4" />
+            {t('home.view_all')} <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
         <div className="space-y-8">

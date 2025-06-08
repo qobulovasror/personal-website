@@ -1,6 +1,6 @@
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
+import { useTranslation } from 'react-i18next';
 const blogPosts = [
   {
     id: 1,
@@ -29,12 +29,13 @@ const blogPosts = [
 ];
 
 export default function Blog() {
+  const { t } = useTranslation();
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Blog</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">{t('blog.title')}</h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Thoughts on technology, design, and building better digital experiences.
+          {t('blog.description')}
         </p>
       </div>
 
@@ -60,7 +61,7 @@ export default function Blog() {
               </h2>
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">{post.excerpt}</p>
               <Link to={`/blog/${post.id}`} className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:gap-3 transition-all">
-                Read More
+                {t('blog.button')}
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

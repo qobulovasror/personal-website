@@ -1,13 +1,14 @@
 import { Github, ExternalLink } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Portfolio() {
-
+  const { t } = useTranslation();
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Portfolio</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">{t('portfolio.title')}</h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          A collection of projects that showcase my passion for creating exceptional digital experiences.
+          {t('portfolio.description')}
         </p>
       </div>
 
@@ -35,17 +36,17 @@ export default function Portfolio() {
                 <div className="flex gap-4">
                   <a
                     href={project.link}
-                    className="flex items-center gap-2 px-6 py-3 bg-black dark:bg-gray-200 dark:text-black text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                    className="flex items-center gap-2 px-6 py-3 bg-black dark:bg-gray-200 dark:text-black text-white rounded-lg font-medium dark:hover:bg-gray-800 transition-colors dark:hover:text-white"
                   >
                     <ExternalLink className="w-4 h-4" />
-                    Live Demo
+                    {t('portfolio.live_demo')}
                   </a>
                   <a
                     href={project.github}
-                    className="flex items-center gap-2 px-6 py-3 border-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-white rounded-lg font-medium hover:border-gray-300 hover:bg-gray-50 transition-colors"
+                    className="flex items-center gap-2 px-6 py-3 border-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-white rounded-lg font-medium dark:hover:bg-gray-600 dark:hover:text-white hover:bg-gray-50 transition-colors"
                   >
                     <Github className="w-4 h-4" />
-                    Code
+                    {t('portfolio.code')}
                   </a>
                 </div>
               </div>

@@ -1,0 +1,82 @@
+{
+  "navbar": {
+    "home": "Home",
+    "blog": "Blog",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Creative Developer",
+    "title2": "& Engineer",
+    "description": "I create solutions that solve real-world problems using cutting-edge technologies. For me, programming is not just about writing code, but the art of creating tools that are useful to people.",
+    "button": "View My Work",
+    "button2": "Read Blog",
+    "featured_work": "Featured Work",
+    "latest_posts": "Latest Posts",
+    "view_all": "View All"
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Thoughts on technology, design, and building better digital experiences.",
+    "button": "Read More"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "description": "A collection of projects that showcase my passion for creating exceptional digital experiences.",
+    "button": "View All",
+    "live_demo": "Live Demo",
+    "code": "Code"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a programmer passionate about developing digital products based on advanced technologies and sustainable solutions. For me, every project is a new opportunity and a new approach. My goal is to write code not just to work, but to work efficiently, be easily scalable, and be user-friendly.",
+    "projects_completed": "Projects Completed",
+    "happy_clients": "Happy Clients",
+    "cups_of_coffee": "Cups of Coffee",
+    "years_experience": "Years Experience",
+    "my_journey": "My Journey",
+    "journey_title1": "Started My Developer Journey",
+    "journey_description1": "Begun learning web development with HTML, CSS, and JavaScript. Built my first websites and discovered my passion for creating digital experiences.",
+    "journey_title2": "Specialized in React & Node.js",
+    "journey_description2": "Dove deep into modern web technologies, mastering React, Node.js, and various databases. Started working on more complex full-stack applications.",
+    "journey_title3": "Freelance & Client Work",
+    "journey_description3": "Started working on more complex full-stack applications.",
+    "journey_title4": "Building & Sharing",
+    "journey_description4": "Building & Sharing",
+    "skills": "Skills & Technologies",
+    "work_together": "Work Together",
+    "work_together_description": "I'm always open to discussing new opportunities and interesting projects. Let's create something amazing together!",
+    "contact_me": "Get In Touch",
+    "download": "Download CV"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Have a project in mind or just want to chat? I'd love to hear from you. Let's discuss how we can bring your ideas to life.",
+    "title2": "Let's Connect",
+    "phone": "Phone",
+    "location": "Location",
+    "follow_me": "Follow Me",
+    "for_work": "Available for Work",
+    "for_work_description": "I'm currently available for freelance projects and full-time opportunities. Let's discuss your next project!",
+    "full_name": "Full Name",
+    "placeholder_full_name": "Your Full Name",
+    "email": "Email",
+    "placeholder_email": "Your Email",
+    "subject": "Subject",
+    "placeholder_subject": "What's this about?",
+    "message": "Message",
+    "placeholder_message": "Write your message here...",
+    "button": "Send Message"
+  },
+  "site_messages": {
+    "empty_fields": "Please fill all the fields",
+    "google_sheets_url_not_set": "Google Sheets URL is not set",
+    "success_title": "Message sent successfully!",
+    "error_msg": "Something went wrong. Please try again later."
+  },
+  "footer": {
+    "copyright": "Asror",
+    "all_rights_reserved": "All rights reserved."
+  }
+}

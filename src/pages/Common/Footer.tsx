@@ -1,6 +1,8 @@
 import { Github, Linkedin, Mail, Send, } from 'lucide-react'
+import { useTranslation } from 'react-i18next';
 
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="border-t border-gray-100 dark:border-gray-800 py-12">
       <div className="max-w-6xl mx-auto px-6">
@@ -9,7 +11,7 @@ export function Footer() {
             <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">A</span>
             </div>
-            <span className="text-gray-600 dark:text-gray-300">© 2024 Asror. All rights reserved.</span>
+            <span className="text-gray-600 dark:text-gray-300">© {new Date().getFullYear()} {t('footer.copyright')}. {t('footer.all_rights_reserved')}</span>
           </div>
           <OtherLinks />
         </div>

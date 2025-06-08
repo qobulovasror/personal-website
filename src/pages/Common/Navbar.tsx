@@ -4,16 +4,32 @@ import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { OtherLinks } from './Footer';
 import { ModeToggle } from '@/components/mode-toggle';
+import { useTranslation } from 'react-i18next';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const menus = [
-    { name: 'Home', path: '/' },
-    { name: 'Blog', path: '/blog' },
-    { name: 'Projects', path: '/portfolio' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
+    { name: t('navbar.home'), path: '/' },
+    { name: t('navbar.blog'), path: '/blog' },
+    { name: t('navbar.projects'), path: '/portfolio' },
+    { name: t('navbar.about'), path: '/about' },
+    { name: t('navbar.contact'), path: '/contact' },
   ];
+
+  const { i18n } = useTranslation();
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    window.location.search = `?lng=${lng}`;
+  };
+
   return (
     <nav className="sticky top-0 z-50 dark:bg-gray-900 bg-white/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-6">
@@ -37,6 +53,17 @@ export default function Navbar() {
               }
             </div>
             <ModeToggle />
+
+            <Select value={i18n.language} onValueChange={(value) => changeLanguage(value)}>
+              <SelectTrigger className="w-20">
+                <SelectValue placeholder="Select a language" />
+              </SelectTrigger>
+              <SelectContent className='bg-white dark:bg-gray-900 text-black dark:text-white w-20'>
+                <SelectItem value="en">EN</SelectItem>
+                <SelectItem value="uz">UZ</SelectItem>
+              </SelectContent>
+            </Select>
+
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
