@@ -54,7 +54,7 @@ export default function Navbar() {
             </div>
             <ModeToggle />
 
-            <Select value={i18n.language} onValueChange={(value) => changeLanguage(value)}>
+            <Select value={i18n.language.split('').includes('-')? i18n.language == "en-GB" ? "en" : "uz": i18n.language} onValueChange={(value) => changeLanguage(value)}>
               <SelectTrigger className="w-20">
                 <SelectValue placeholder="Select a language" />
               </SelectTrigger>

@@ -1,34 +1,13 @@
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-const blogPosts = [
-  {
-    id: 1,
-    title: "Building Modern Web Applications with React",
-    excerpt: "Exploring the latest patterns and best practices in React development, from hooks to server components.",
-    date: "2024-03-15",
-    readTime: "5 min read",
-    category: "Development"
-  },
-  {
-    id: 2,
-    title: "The Future of Web Design",
-    excerpt: "How minimalism and user experience are shaping the next generation of digital interfaces.",
-    date: "2024-03-10",
-    readTime: "3 min read",
-    category: "Design"
-  },
-  {
-    id: 3,
-    title: "Performance Optimization Techniques",
-    excerpt: "Advanced strategies for making your web applications lightning fast and user-friendly.",
-    date: "2024-03-05",
-    readTime: "7 min read",
-    category: "Performance"
-  }
-];
+import type { Post } from '@/type/blog';
 
-export default function Blog() {
+interface BlogProps {
+  posts: Post[];
+}
+
+export default function Blog({ posts }: BlogProps) {
   const { t } = useTranslation();
   return (
     <div className="space-y-12">
@@ -40,7 +19,7 @@ export default function Blog() {
       </div>
 
       <div className="space-y-12">
-        {blogPosts.map(post => (
+        {posts.map(post => (
           <article key={post.id} className="group cursor-pointer">
             <div className="p-8 rounded-2xl border border-gray-100 dark:border-gray-800 hover:border-gray-200 hover:shadow-lg transition-all duration-300">
               <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
@@ -70,5 +49,4 @@ export default function Blog() {
       </div>
     </div>
   );
-
 }

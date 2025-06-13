@@ -1,25 +1,27 @@
-import { ArrowLeft, BookOpen, Calendar, Clock, Eye, Github, Linkedin, Mail, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Github, Linkedin, Mail } from "lucide-react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function BlogPost() {
   const { id } = useParams();
   const [selectedPost, setSelectedPost] = useState(blogPosts.find(post => post.id === parseInt(id as string)) || blogPosts[0]);
+  const { t } = useTranslation();
   return (
     <div className="max-w-4xl mx-auto">
       {/* Back Button */}
-      <button
-        // onClick={closeBlogPost}
-        className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors mb-8 group"
+      <Link
+        to="/blog"
+        className="flex items-center gap-2 text-gray-600 hover:text-black dark:hover:text-white transition-colors mb-8 group"
       >
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-        Back to Blog
-      </button>
+        {t('blog_post.back_to_blog')}
+      </Link>
 
       {/* Article Header */}
       <header className="mb-12">
         {/* Featured Image */}
-        <div className="relative overflow-hidden rounded-2xl mb-8 bg-gray-100">
+        <div className="relative overflow-hidden rounded-2xl mb-8 bg-gray-100 dark:bg-gray-800">
           <img
             src={selectedPost?.image}
             alt={selectedPost?.title}
@@ -29,7 +31,7 @@ export default function BlogPost() {
         </div>
 
         {/* Meta Info */}
-        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
+        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6 dark:text-gray-400">
           <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-medium">
             {selectedPost?.category}
           </span>
@@ -45,44 +47,17 @@ export default function BlogPost() {
             <Clock className="w-4 h-4" />
             {selectedPost.readTime}
           </div>
-          <div className="flex items-center gap-1">
-            <Eye className="w-4 h-4" />
-            1.2k views
-          </div>
         </div>
 
         {/* Title */}
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+        <h1 className="text-4xl md:text-5xl font-bold dark:text-white text-gray-900 mb-6 leading-tight">
           {selectedPost.title}
         </h1>
 
-        {/* Author & Share */}
-        <div className="flex items-center justify-between pb-8 border-b border-gray-100">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold">A</span>
-            </div>
-            <div>
-              <div className="font-semibold text-gray-900">Azimjon</div>
-              <div className="text-sm text-gray-500">Developer & Designer</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <button className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-black transition-colors">
-              <Share2 className="w-4 h-4" />
-              Share
-            </button>
-            <button className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-black transition-colors">
-              <BookOpen className="w-4 h-4" />
-              Save
-            </button>
-          </div>
-        </div>
       </header>
 
       {/* Article Content */}
-      <article className="prose prose-lg max-w-none">
+      <article className="prose prose-lg max-w-none dark:prose-invert">
         <div
           className="prose-content"
           dangerouslySetInnerHTML={{ __html: selectedPost.content }}
@@ -94,12 +69,12 @@ export default function BlogPost() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center">
-              <span className="text-white font-bold text-lg">A</span>
+              <span className="text-white font-bold text-lg dark:text-white">A</span>
             </div>
             <div>
-              <div className="font-bold text-gray-900 text-lg">Azimjon</div>
-              <div className="text-gray-600">
-                Full-stack developer passionate about creating amazing web experiences.
+              <div className="font-bold text-gray-900 text-lg dark:text-white">Asror</div>
+              <div className="text-gray-600 dark:text-gray-400">
+                {t('blog_post.footer_description')}
               </div>
             </div>
           </div>
@@ -129,7 +104,7 @@ export default function BlogPost() {
 
       {/* Related Posts */}
       <section className="mt-20">
-        <h2 className="text-2xl font-bold text-gray-900 mb-8">More Articles</h2>
+        <h2 className="text-2xl font-bold text-gray-900 mb-8 dark:text-white">{t('blog_post.more_articles')}</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {blogPosts
             .filter(post => post.id !== selectedPost.id)
@@ -150,16 +125,16 @@ export default function BlogPost() {
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-500 mb-3">
+                <div className="flex items-center gap-3 text-sm text-gray-500 mb-3 dark:text-gray-400">
                   <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full">
                     {post.category}
                   </span>
                   <span>{post.readTime}</span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors dark:text-white">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed dark:text-gray-400">
                   {post.excerpt}
                 </p>
               </article>

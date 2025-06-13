@@ -19,14 +19,16 @@
   "blog": {
     "title": "Blog",
     "description": "Thoughts on technology, design, and building better digital experiences.",
-    "button": "Read More"
+    "button": "Read More",
+    "no_posts": "No posts found"
   },
   "portfolio": {
-    "title": "Portfolio",
+    "title": "Projects",
     "description": "A collection of projects that showcase my passion for creating exceptional digital experiences.",
     "button": "View All",
     "live_demo": "Live Demo",
-    "code": "Code"
+    "code": "Code",
+    "no_projects": "No projects found"
   },
   "about": {
     "title": "About Me",
@@ -68,6 +70,11 @@
     "message": "Message",
     "placeholder_message": "Write your message here...",
     "button": "Send Message"
+  },
+  "blog_post": {
+    "back_to_blog": "Back to Blog",
+    "footer_description": "Full-stack developer passionate about creating amazing web experiences.",
+    "more_articles": "More Articles"
   },
   "site_messages": {
     "empty_fields": "Please fill all the fields",

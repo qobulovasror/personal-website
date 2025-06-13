@@ -19,14 +19,16 @@
   "blog": {
     "title": "Blog",
     "description": "Texnologiyalar, dizayn va yaxshiroq yechimlar haqida fikrlar",
-    "button": "Ko'proq o'qish"
+    "button": "Ko'proq o'qish",
+    "no_posts": "Postlar topilmadi"
   },
   "portfolio": {
-    "title": "Portfolio",
+    "title": "Loyihalar",
     "description": "Men uchun dasturlash – bu shunchaki kod yozish emas, balki insonlarga foydali bo‘lgan vositalarni yaratish san’atidir.",
     "button": "Barchasini ko'rish",
     "live_demo": "Ko'rish",
-    "code": "Kod"
+    "code": "Kod",
+    "no_projects": "Loyihalar topilmadi"
   },
   "about": {
     "title": "Men haqimda",
@@ -68,6 +70,11 @@
     "message": "Xabar",
     "placeholder_message": "Xabaringizni yozing...",
     "button": "Xabar yuborish"
+  },
+  "blog_post": {
+    "back_to_blog": "Blogga qaytish",
+    "footer_description": "Dasturchi, yangi loyihalar yaratishga qiziqadi.",
+    "more_articles": "Boshqa blog postlari"
   },
   "site_messages": {
     "empty_fields": "Iltimos, barcha maydonlarni to'ldiring",
